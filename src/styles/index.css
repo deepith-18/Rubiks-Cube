@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    @apply bg-app-bg text-white min-h-screen font-sans antialiased;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md transition-all duration-300 transform hover:scale-105 focus:outline-none;
+  }
+  
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 text-white;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-600 hover:bg-gray-700 text-white;
+  }
+  
+  .btn-outline {
+    @apply border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white;
+  }
+  
+  .panel {
+    @apply bg-panel-bg rounded-lg shadow-lg p-4;
+  }
+  
+  .color-tile {
+    @apply w-8 h-8 rounded cursor-pointer transition-transform transform hover:scale-110;
+  }
+  
+  .face-grid {
+    @apply grid grid-cols-3 gap-1;
+  }
+  
+  .face-cell {
+    @apply w-8 h-8 rounded cursor-pointer;
+  }
+  
+  .tooltip {
+    @apply absolute invisible group-hover:visible bg-black text-white rounded p-2 text-sm z-50;
+  }
+  
+  .cube-control-btn {
+    @apply p-3 bg-gray-800 rounded-full hover:bg-gray-700 transition-colors;
+  }
+}
+
+.threejs-container {
+  touch-action: none;
+}
+
+.loader {
+  border-top-color: #3498db;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.solution-step {
+  transition: all 0.3s ease;
+}
+
+.solution-step.active {
+  transform: scale(1.05);
+  background-color: rgba(59, 130, 246, 0.2);
+}
+
+.cube-notation {
+  font-family: monospace;
+  font-weight: bold;
+}
